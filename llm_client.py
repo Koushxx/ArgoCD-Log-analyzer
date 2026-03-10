@@ -27,7 +27,11 @@ def call_llm(system_prompt: str, user_prompt: str) -> str:
         "temperature": 0.2,  # low temp for deterministic, factual analysis
     }
 
-    resp = requests.post(LLM_API_URL, headers=headers, json=payload, timeout=120)
+    # Bypass any system/corporate proxy for the Bosch API endpoint
+    resp = requests.post(
+        LLM_API_URL, headers=headers, json=payload, timeout=120,
+        proxies={"http": None, "https": None},
+    )
     resp.raise_for_status()
 
     data = resp.json()
