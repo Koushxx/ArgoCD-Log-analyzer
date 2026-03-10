@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0dadea"/>
+      <stop offset="50%" style="stop-color:#18be94"/>
+      <stop offset="100%" style="stop-color:#0dadea"/>
+    </linearGradient>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0dadea;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#18be94;stop-opacity:0.08"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0dadea"/>
+      <stop offset="100%" style="stop-color:#18be94"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="250" fill="url(#bg)" stroke="#21262d" stroke-width="2"/>
+  <circle cx="256" cy="256" r="245" fill="none" stroke="url(#ring)" stroke-width="1" opacity="0.3"/>
+
+  <!-- ArgoCD-style circular sync arrows (outer ring) -->
+  <g transform="translate(256,210)">
+    <!-- Top arc arrow -->
+    <path d="M-80,-80 A113,113 0 0,1 80,-80" fill="none" stroke="url(#ring)" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="80,-80 62,-68 70,-92" fill="#0dadea"/>
+    <!-- Bottom arc arrow -->
+    <path d="M80,80 A113,113 0 0,1 -80,80" fill="none" stroke="url(#ring)" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="-80,80 -62,68 -70,92" fill="#18be94"/>
+  </g>
+
+  <!-- Magnifying glass body -->
+  <g transform="translate(256,210)">
+    <circle cx="0" cy="0" r="60" fill="url(#lens)" stroke="#0dadea" stroke-width="4"/>
+    <!-- Glass handle -->
+    <line x1="42" y1="42" x2="85" y2="85" stroke="#0dadea" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Log lines inside magnifying glass -->
+  <g transform="translate(256,210)" opacity="0.9">
+    <rect x="-35" y="-25" width="40" height="4" rx="2" fill="#18be94"/>
+    <rect x="-35" y="-15" width="50" height="4" rx="2" fill="#e96d76"/>
+    <rect x="-35" y="-5" width="30" height="4" rx="2" fill="#0dadea"/>
+    <rect x="-35" y="5" width="45" height="4" rx="2" fill="#c9d1d9"/>
+    <rect x="-35" y="15" width="35" height="4" rx="2" fill="#f4c030"/>
+  </g>
+
+  <!-- Checkmark / diagnosis indicator -->
+  <g transform="translate(310,160)">
+    <circle cx="0" cy="0" r="16" fill="#18be94"/>
+    <polyline points="-7,0 -2,5 8,-5" fill="none" stroke="#0d1117" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- App name -->
+  <text x="256" y="358" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="36" fill="url(#title)" letter-spacing="2">ARGO LOG</text>
+  <text x="256" y="398" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="34" fill="#c9d1d9" letter-spacing="4">ANALYZER</text>
+
+  <!-- Tagline -->
+  <text x="256" y="432" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="400" font-size="12" fill="#8b949e" letter-spacing="3">DECODE · DIAGNOSE · DEPLOY</text>
+</svg>

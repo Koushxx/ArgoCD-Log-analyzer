@@ -1,0 +1,10 @@
+time="2026-03-10T08:15:32Z" level=error msg="ComparisonError: failed to sync application 'payment-service'"
+time="2026-03-10T08:15:32Z" level=error msg="one or more objects failed to apply, reason: Deployment.apps \"payment-service\" is invalid: spec.template.spec.containers[0].resources.requests: Invalid value: \"2000m\": must be less than or equal to cpu limit"
+time="2026-03-10T08:15:33Z" level=info msg="sync status: OutOfSync" application=payment-service
+time="2026-03-10T08:15:34Z" level=error msg="health status: Degraded" application=payment-service
+Events:
+  Type     Reason            Age   From     Message
+  ----     ------            ----  ----     -------
+  Warning  FailedScheduling  2m    default-scheduler  0/3 nodes are available: 3 Insufficient cpu.
+  Warning  OOMKilled         1m    kubelet  Container payment-service exceeded memory limit
+  Normal   BackOff           30s   kubelet  Back-off restarting failed container
